@@ -1,0 +1,1 @@
+cmd_drivers/input/touchscreen/built-in.o :=  arm-eabi-ld -EL    -r -o drivers/input/touchscreen/built-in.o drivers/input/touchscreen/synaptics_i2c_rmi.o drivers/input/touchscreen/atmel.o drivers/input/touchscreen/tssc_manager.o drivers/input/touchscreen/calibrate.o drivers/input/touchscreen/melfas_tsi.o 
