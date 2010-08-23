@@ -1,0 +1,45 @@
+--- arch/arm/mach-msm/cpufreq.c	2010-04-21 06:07:35.000000000 -0700
++++ arch/arm/mach-msm/cpufreq.c	2010-05-10 07:23:48.000000000 -0700
+@@ -20,6 +20,7 @@
+ #include <linux/cpufreq.h>
+ #include <linux/earlysuspend.h>
+ #include <linux/init.h>
++#include <linux/cpufreq.h>
+ #include "acpuclock.h"
+ 
+ #ifdef CONFIG_MSM_CPU_FREQ_SCREEN
+@@ -86,6 +87,12 @@
+ 	return 0;
+ }
+ 
++static struct freq_attr* msm_attr[] = {
++        &cpufreq_freq_attr_scaling_available_freqs,
++        NULL,
++};
++
++
+ static int __init msm_cpufreq_init(struct cpufreq_policy *policy)
+ {
+ 	struct cpufreq_frequency_table *table =
+@@ -93,9 +100,11 @@
+ 
+ 	BUG_ON(cpufreq_frequency_table_cpuinfo(policy, table));
+ 	policy->cur = acpuclk_get_rate();
+-#if 0
+ 	/* restrict cpu freq scaling range by overwriting */
++#ifdef CONFIG_MSM_CPU_FREQ_ONDEMAND_MIN
+ 	policy->min = CONFIG_MSM_CPU_FREQ_ONDEMAND_MIN;
++#endif
++#ifdef CONFIG_MSM_CPU_FREQ_ONDEMAND_MAX
+ 	policy->max = CONFIG_MSM_CPU_FREQ_ONDEMAND_MAX;
+ #endif
+ 	policy->cpuinfo.transition_latency =
+@@ -110,6 +119,8 @@
+ 	.verify		= msm_cpufreq_verify,
+ 	.target		= msm_cpufreq_target,
+ 	.name		= "msm",
++	.owner		= THIS_MODULE,
++	.attr		= msm_attr,
+ };
+ 
+ static int __init msm_cpufreq_register(void)
