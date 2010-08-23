@@ -98,6 +98,15 @@ struct clkctl_acpu_speed {
 /* Index in acpu_freq_tbl[] for steppings. */
 	short		down;
 	short		up;
+	unsigned long	pllclk_mul;
+};
+
+/* table of multiplier addresses, per pll */
+static void *acpu_pll_mul_addr[] = {
+	MSM_CLK_CTL_BASE+0x304, /* PLL0 (mpll)  */
+	MSM_CLK_CTL_BASE+0x320, /* PLL1 (gpll)  */
+	MSM_CLK_CTL_BASE+0x33c, /* PLL2 (bpll0) */
+	MSM_CLK_CTL_BASE+0x358, /* PLL3 (bpll1) */
 };
 
 /*
@@ -124,7 +133,6 @@ static struct clkctl_acpu_speed msm7227_tbl[] = {
 
 /* 7200a turbo mode, PLL0(mpll):245.76, PLL1(gpll):960, PLL2(bpll0):1056 */
 static struct clkctl_acpu_speed  msm72xx_tbl[] = {
-#if defined(CONFIG_TURBO_MODE)
 	{ 19200, ACPU_PLL_TCXO, 0, 0, 19200, 0, VDD_0, 30720, 0, 0, 4 },
 	{ 122880, ACPU_PLL_0, 4, 1, 61440, 1, VDD_3, 61440, 0, 0, 4 },
 #if 1 /* QCT fixup */
@@ -140,19 +148,23 @@ static struct clkctl_acpu_speed  msm72xx_tbl[] = {
 #else /* Google */
 	{ 480000, ACPU_PLL_1, 1, 1, 128000, 2, VDD_6, 160000, 0, 2, -1 },
 #endif
-	{ 528000, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1 },
+	{ 518400, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1, 0x1a },
+	{ 537600, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1, 0x1b },
+	{ 556800, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1, 0x1c },
+	{ 576000, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1, 0x1d },
+	{ 595200, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1, 0x1e },
+	{ 614400, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1, 0x20 },
+	{ 633600, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1, 0x21 },
+	{ 652800, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1, 0x22 },
+	{ 672000, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1, 0x23 },
+	{ 691200, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1, 0x24 },
+	{ 710400, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1, 0x25 },
+	{ 729600, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1, 0x26 },
+	{ 748800, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1, 0x27 },
+	{ 768000, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1, 0x28 },
+/*unstable TODO adjust memory divider to increase oc freq*/
+//	{ 786800, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 160000, 0, 5, -1, 0x29 },
 	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-#else
-	{ 19200, ACPU_PLL_TCXO, 0, 0, 19200, 0, VDD_0, 30720, 0, 0, 4 },
-	{ 122880, ACPU_PLL_0, 4, 1, 61440, 1, VDD_3, 61440, 0, 0, 4 },
-	{ 128000, ACPU_PLL_1, 1, 5, 64000, 1, VDD_3, 61440, 0, 0, 6 },
-	{ 176000, ACPU_PLL_2, 2, 5, 88000, 1, VDD_3, 61440, 0, 0, 5 },
-	{ 245760, ACPU_PLL_0, 4, 0, 81920, 2, VDD_4, 61440, 0, 0, 5 },
-	{ 352000, ACPU_PLL_2, 2, 2, 88000, 3, VDD_5, 128000, 0, 3, 7 },
-	{ 384000, ACPU_PLL_1, 1, 1, 128000, 2, VDD_6, 128000, 0, 2, -1 },
-	{ 528000, ACPU_PLL_2, 2, 1, 132000, 3, VDD_7, 128000, 0, 5, -1 },
-	{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-#endif
 };
 
 #ifdef CONFIG_CPU_FREQ
@@ -168,14 +180,29 @@ static struct cpufreq_frequency_table msm7227_freq_table[] = {
 };
 
 static struct cpufreq_frequency_table msm72xx_freq_table[] = {
-#if defined(CONFIG_TURBO_MODE)
 	{ 0, 19200 },
 	{ 1, 122880 },
 	{ 2, 160000 },
 	{ 3, 245760 },
 	{ 4, 480000 },
-	{ 5, 528000 },
-	{ 6, CPUFREQ_TABLE_END },
+	{ 5, 518400 },
+	{ 6, 537600 },
+        { 7, 556800 },
+        { 8, 576000 },
+        { 9, 595200 },
+        { 10, 614400 },
+        { 11, 633600 },
+        { 12, 652800 },
+        { 13, 672000 },
+        { 14, 691200 },
+        { 15, 710400 },
+        { 16, 729600 },
+        { 17, 748800 },
+        { 18, 768000 },
+/*TODO*/
+//        { 19, 787200 },
+        { 19, CPUFREQ_TABLE_END },
+};
 #else
 	{ 0, 19200 },
 	{ 1, 122880 },
@@ -184,7 +211,6 @@ static struct cpufreq_frequency_table msm72xx_freq_table[] = {
 	{ 4, 384000 },
 	{ 5, 528000 },
 	{ 6, CPUFREQ_TABLE_END },
-#endif
 };
 #endif
 
@@ -309,10 +335,14 @@ static int acpuclk_set_vdd_level(int vdd)
 
 /* Set proper dividers for the given clock speed. */
 static void acpuclk_set_div(const struct clkctl_acpu_speed *hunt_s) {
-	uint32_t reg_clkctl, reg_clksel, clk_div;
+	uint32_t reg_clkctl, reg_clksel, clk_div, pllclk_mul;
+	void *pllclk_mul_addr;
 
 	/* AHB_CLK_DIV */
 	clk_div = (readl(A11S_CLK_SEL_ADDR) >> 1) & 0x03;
+	/* PLL clock multiplier */
+	pllclk_mul_addr = hunt_s->pll >= 0 ? acpu_pll_mul_addr[hunt_s->pll] : 0;
+	pllclk_mul = pllclk_mul_addr ? readl(pllclk_mul_addr) : 0;
 	/*
 	 * If the new clock divider is higher than the previous, then
 	 * program the divider before switching the clock
@@ -341,7 +371,6 @@ static void acpuclk_set_div(const struct clkctl_acpu_speed *hunt_s) {
 		/* Program clock source selection */
 		reg_clksel = readl(A11S_CLK_SEL_ADDR);
 		reg_clksel |= 1; /* CLK_SEL_SRC1NO  == SRC1 */
-		writel(reg_clksel, A11S_CLK_SEL_ADDR);
 	} else {
 		/* SRC1 */
 
@@ -360,9 +389,37 @@ static void acpuclk_set_div(const struct clkctl_acpu_speed *hunt_s) {
 		/* Program clock source selection */
 		reg_clksel = readl(A11S_CLK_SEL_ADDR);
 		reg_clksel &= ~1; /* CLK_SEL_SRC1NO  == SRC0 */
-		writel(reg_clksel, A11S_CLK_SEL_ADDR);
 	}
-
+	/* 
+	 * If the new multiplier is lower than the previous, then change
+	 * the multiplier before changing the clock parameters
+	 */
+	if (pllclk_mul_addr && hunt_s->pllclk_mul < pllclk_mul) {
+		writel(hunt_s->pllclk_mul, pllclk_mul_addr);
+		udelay(drv_state.vdd_switch_time_us);
+		pllclk_mul = readl(pllclk_mul_addr);
+		if (pllclk_mul != hunt_s->pllclk_mul) {
+			pr_info("acpuclock: failed to alter PLL mult: %lu\n", 
+				hunt_s->pllclk_mul);
+			return; /* don't switch clocks on failure */
+		} 
+	}
+	/* Write clock source selection */
+	writel(reg_clksel, A11S_CLK_SEL_ADDR);
+	/* 
+	 * If the new multiplier is higher than the previous, then change
+	 * the multiplier after changing the clock parameters
+	 */
+	if (pllclk_mul_addr && hunt_s->pllclk_mul > pllclk_mul) {
+		writel(hunt_s->pllclk_mul, pllclk_mul_addr);
+		udelay(drv_state.vdd_switch_time_us);
+		pllclk_mul = readl(pllclk_mul_addr);
+		if (pllclk_mul != hunt_s->pllclk_mul) {
+			pr_info("acpuclock: failed to alter PLL mult: %lu\n", 
+				hunt_s->pllclk_mul);
+			return;
+		} 
+	}
 	/*
 	 * If the new clock divider is lower than the previous, then
 	 * program the divider after switching the clock
