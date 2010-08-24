@@ -1,3 +1,13 @@
+To compile, use:
+
+make arch=ARM subarch=ARM msm7225_custom_defconfig
+
+then:
+
+make arch=ARM subarch=ARM
+
+
+
 	Linux kernel release 2.6.xx <http://kernel.org/>
 
 These are the release notes for Linux version 2.6.  Read them carefully,
