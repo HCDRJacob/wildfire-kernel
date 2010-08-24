@@ -1,4 +1,4 @@
-cmd_fs/proc/base.o := arm-eabi-gcc -Wp,-MD,fs/proc/.base.o.d  -nostdinc -isystem /usr/bin/../lib/gcc/arm-eabi/4.5.0/include -Iinclude  -I/home/jacob/source/buzz-2.6.29/arch/arm/include -include include/linux/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-msm/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Os -marm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -D__LINUX_ARM_ARCH__=6 -march=armv6 -mtune=arm1136j-s -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -Wdeclaration-after-statement -Wno-pointer-sign -fwrapv -fno-dwarf2-cfi-asm  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(base)"  -D"KBUILD_MODNAME=KBUILD_STR(proc)"  -c -o fs/proc/base.o fs/proc/base.c
+cmd_fs/proc/base.o := arm-eabi-gcc -Wp,-MD,fs/proc/.base.o.d  -nostdinc -isystem /usr/bin/../lib/gcc/arm-eabi/4.5.0/include -Iinclude  -I/home/jacob/source/wildfire-kernel/arch/arm/include -include include/linux/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-msm/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Os -marm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -D__LINUX_ARM_ARCH__=6 -march=armv6 -mtune=arm1136j-s -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -Wdeclaration-after-statement -Wno-pointer-sign -fwrapv -fno-dwarf2-cfi-asm  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(base)"  -D"KBUILD_MODNAME=KBUILD_STR(proc)"  -c -o fs/proc/base.o fs/proc/base.c
 
 deps_fs/proc/base.o := \
   fs/proc/base.c \
@@ -18,7 +18,7 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/proc/page/monitor.h) \
     $(wildcard include/config/proc/pid/cpuset.h) \
     $(wildcard include/config/cgroups.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/uaccess.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/uaccess.h \
     $(wildcard include/config/mmu.h) \
   include/linux/string.h \
   include/linux/compiler.h \
@@ -37,23 +37,23 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/64bit.h) \
   include/linux/posix_types.h \
   include/linux/stddef.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/posix_types.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/types.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/posix_types.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/types.h \
   include/asm-generic/int-ll64.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/string.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/string.h \
   include/linux/thread_info.h \
     $(wildcard include/config/compat.h) \
   include/linux/bitops.h \
     $(wildcard include/config/generic/find/first/bit.h) \
     $(wildcard include/config/generic/find/last/bit.h) \
     $(wildcard include/config/generic/find/next/bit.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/bitops.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/bitops.h \
     $(wildcard include/config/smp.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/system.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/system.h \
     $(wildcard include/config/cpu/xsc3.h) \
     $(wildcard include/config/cpu/sa1100.h) \
     $(wildcard include/config/cpu/sa110.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/memory.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/memory.h \
     $(wildcard include/config/page/offset.h) \
     $(wildcard include/config/dram/size.h) \
     $(wildcard include/config/dram/base.h) \
@@ -2667,13 +2667,13 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/mach/qsd8x50a/st1/1.h) \
     $(wildcard include/config/mach/qsd8x50a/st1/5.h) \
     $(wildcard include/config/mach/bee.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/sizes.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/sizes.h \
   include/asm-generic/memory_model.h \
     $(wildcard include/config/flatmem.h) \
     $(wildcard include/config/sparsemem/vmemmap.h) \
     $(wildcard include/config/sparsemem.h) \
   include/linux/linkage.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/linkage.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/linkage.h \
   include/linux/irqflags.h \
     $(wildcard include/config/trace/irqflags.h) \
     $(wildcard include/config/irqsoff/tracer.h) \
@@ -2681,10 +2681,10 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/trace/irqflags/support.h) \
     $(wildcard include/config/x86.h) \
   include/linux/typecheck.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/irqflags.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/ptrace.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/irqflags.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/ptrace.h \
     $(wildcard include/config/arm/thumb.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/hwcap.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/hwcap.h \
   include/asm-generic/cmpxchg-local.h \
   include/asm-generic/cmpxchg.h \
   include/asm-generic/bitops/non-atomic.h \
@@ -2692,15 +2692,15 @@ deps_fs/proc/base.o := \
   include/asm-generic/bitops/sched.h \
   include/asm-generic/bitops/hweight.h \
   include/asm-generic/bitops/lock.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/thread_info.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/thread_info.h \
     $(wildcard include/config/arm/thumbee.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/fpstate.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/fpstate.h \
     $(wildcard include/config/vfpv3.h) \
     $(wildcard include/config/iwmmxt.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/domain.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/domain.h \
     $(wildcard include/config/verify/permission/fault.h) \
     $(wildcard include/config/io/36.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/errno.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/errno.h \
   include/asm-generic/errno.h \
   include/asm-generic/errno-base.h \
   include/linux/errno.h \
@@ -2720,21 +2720,21 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/arch/has/ilog2/u64.h) \
   include/linux/ratelimit.h \
   include/linux/param.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/param.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/param.h \
     $(wildcard include/config/hz.h) \
   include/linux/dynamic_printk.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/byteorder.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/byteorder.h \
   include/linux/byteorder/little_endian.h \
   include/linux/swab.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/swab.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/swab.h \
   include/linux/byteorder/generic.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/bug.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/bug.h \
     $(wildcard include/config/bug.h) \
     $(wildcard include/config/debug/bugverbose.h) \
   include/asm-generic/bug.h \
     $(wildcard include/config/generic/bug.h) \
     $(wildcard include/config/generic/bug/relative/pointers.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/cache.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/cache.h \
     $(wildcard include/config/arm/l1/cache/shift.h) \
     $(wildcard include/config/aeabi.h) \
   include/linux/seqlock.h \
@@ -2750,7 +2750,7 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/debug/list.h) \
   include/linux/poison.h \
   include/linux/prefetch.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/processor.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/processor.h \
   include/linux/stringify.h \
   include/linux/bottom_half.h \
   include/linux/spinlock_types.h \
@@ -2761,10 +2761,10 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/generic/hardirqs.h) \
   include/linux/spinlock_up.h \
   include/linux/spinlock_api_up.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/atomic.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/atomic.h \
   include/asm-generic/atomic.h \
   include/linux/math64.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/div64.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/div64.h \
   include/linux/proc_fs.h \
     $(wildcard include/config/proc/fs.h) \
     $(wildcard include/config/proc/devicetree.h) \
@@ -2794,7 +2794,7 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/holes/in/zone.h) \
     $(wildcard include/config/arch/has/holes/memorymodel.h) \
   include/linux/wait.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/current.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/current.h \
   include/linux/threads.h \
     $(wildcard include/config/nr/cpus.h) \
     $(wildcard include/config/base/small.h) \
@@ -2809,14 +2809,14 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/hugetlb/page.h) \
     $(wildcard include/config/hugetlb/page/size/variable.h) \
   include/linux/bounds.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/page.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/page.h \
     $(wildcard include/config/cpu/copy/v3.h) \
     $(wildcard include/config/cpu/copy/v4wt.h) \
     $(wildcard include/config/cpu/copy/v4wb.h) \
     $(wildcard include/config/cpu/copy/feroceon.h) \
     $(wildcard include/config/cpu/xscale.h) \
     $(wildcard include/config/cpu/copy/v6.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/glue.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/glue.h \
     $(wildcard include/config/cpu/arm610.h) \
     $(wildcard include/config/cpu/arm710.h) \
     $(wildcard include/config/cpu/abrt/lv4t.h) \
@@ -2850,7 +2850,7 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/debug/per/cpu/maps.h) \
   include/linux/smp.h \
     $(wildcard include/config/use/generic/smp/helpers.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/topology.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/topology.h \
   include/asm-generic/topology.h \
   include/linux/slab_def.h \
   include/linux/kmalloc_sizes.h \
@@ -2867,7 +2867,7 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/migration.h) \
   include/linux/limits.h \
   include/linux/ioctl.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/ioctl.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/ioctl.h \
   include/asm-generic/ioctl.h \
   include/linux/kdev_t.h \
   include/linux/dcache.h \
@@ -2877,7 +2877,7 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/tree/rcu.h) \
     $(wildcard include/config/preempt/rcu.h) \
   include/linux/percpu.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/percpu.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/percpu.h \
   include/asm-generic/percpu.h \
     $(wildcard include/config/have/setup/per/cpu/area.h) \
   include/linux/completion.h \
@@ -2885,7 +2885,7 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/rcu/cpu/stall/detector.h) \
   include/linux/path.h \
   include/linux/stat.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/stat.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/stat.h \
   include/linux/kobject.h \
   include/linux/sysfs.h \
   include/linux/kref.h \
@@ -2905,7 +2905,7 @@ deps_fs/proc/base.o := \
   include/linux/nfs.h \
   include/linux/sunrpc/msg_prot.h \
   include/linux/fcntl.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/fcntl.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/fcntl.h \
   include/asm-generic/fcntl.h \
   include/linux/err.h \
   include/linux/magic.h \
@@ -2940,7 +2940,7 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/group/sched.h) \
     $(wildcard include/config/mm/owner.h) \
   include/linux/timex.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/timex.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/timex.h \
   arch/arm/mach-msm/include/mach/timex.h \
   include/linux/jiffies.h \
   include/linux/rbtree.h \
@@ -2948,20 +2948,20 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/split/ptlock/cpus.h) \
     $(wildcard include/config/mmu/notifier.h) \
   include/linux/auxvec.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/auxvec.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/mmu.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/auxvec.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/mmu.h \
     $(wildcard include/config/cpu/has/asid.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/cputime.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/cputime.h \
   include/asm-generic/cputime.h \
   include/linux/sem.h \
   include/linux/ipc.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/ipcbuf.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/sembuf.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/ipcbuf.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/sembuf.h \
   include/linux/signal.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/signal.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/signal.h \
   include/asm-generic/signal.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/sigcontext.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/siginfo.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/sigcontext.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/siginfo.h \
   include/asm-generic/siginfo.h \
   include/linux/fs_struct.h \
   include/linux/proportions.h \
@@ -2973,7 +2973,7 @@ deps_fs/proc/base.o := \
   include/linux/plist.h \
     $(wildcard include/config/debug/pi/list.h) \
   include/linux/resource.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/resource.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/resource.h \
   include/asm-generic/resource.h \
   include/linux/timer.h \
     $(wildcard include/config/timer/stats.h) \
@@ -3015,9 +3015,9 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/debug/virtual.h) \
   include/linux/debug_locks.h \
     $(wildcard include/config/debug/locking/api/selftests.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/pgtable.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/pgtable.h \
   include/asm-generic/4level-fixup.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/proc-fns.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/proc-fns.h \
     $(wildcard include/config/cpu/32.h) \
     $(wildcard include/config/cpu/arm7tdmi.h) \
     $(wildcard include/config/cpu/arm720t.h) \
@@ -3036,9 +3036,9 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/cpu/feroceon.h) \
     $(wildcard include/config/cpu/v6.h) \
     $(wildcard include/config/cpu/v7.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/cpu-single.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/cpu-single.h \
   arch/arm/mach-msm/include/mach/vmalloc.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/pgtable-hwdef.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/pgtable-hwdef.h \
   include/asm-generic/pgtable.h \
   include/linux/page-flags.h \
     $(wildcard include/config/pageflags/extended.h) \
@@ -3059,15 +3059,15 @@ deps_fs/proc/base.o := \
   include/linux/kmod.h \
   include/linux/elf.h \
   include/linux/elf-em.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/elf.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/user.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/elf.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/user.h \
   include/linux/moduleparam.h \
     $(wildcard include/config/alpha.h) \
   include/linux/marker.h \
   include/linux/tracepoint.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/local.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/local.h \
   include/asm-generic/local.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/module.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/module.h \
   include/linux/security.h \
     $(wildcard include/config/security/path.h) \
     $(wildcard include/config/security/network.h) \
@@ -3075,10 +3075,10 @@ deps_fs/proc/base.o := \
     $(wildcard include/config/securityfs.h) \
   include/linux/binfmts.h \
   include/linux/shm.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/shmparam.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/shmbuf.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/shmparam.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/shmbuf.h \
   include/linux/msg.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/msgbuf.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/msgbuf.h \
   include/linux/xfrm.h \
   include/net/flow.h \
   include/linux/in6.h \
@@ -3099,7 +3099,7 @@ deps_fs/proc/base.o := \
   include/linux/audit.h \
     $(wildcard include/config/change.h) \
   include/linux/poll.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/poll.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/poll.h \
   include/asm-generic/poll.h \
   include/linux/oom.h \
   include/linux/pid_namespace.h \

@@ -1,4 +1,4 @@
-cmd_arch/arm/mach-msm/drv_callback.o := arm-eabi-gcc -Wp,-MD,arch/arm/mach-msm/.drv_callback.o.d  -nostdinc -isystem /usr/bin/../lib/gcc/arm-eabi/4.5.0/include -Iinclude  -I/home/jacob/source/buzz-2.6.29/arch/arm/include -include include/linux/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-msm/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Os -marm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -D__LINUX_ARM_ARCH__=6 -march=armv6 -mtune=arm1136j-s -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -Wdeclaration-after-statement -Wno-pointer-sign -fwrapv -fno-dwarf2-cfi-asm  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(drv_callback)"  -D"KBUILD_MODNAME=KBUILD_STR(drv_callback)"  -c -o arch/arm/mach-msm/drv_callback.o arch/arm/mach-msm/drv_callback.c
+cmd_arch/arm/mach-msm/drv_callback.o := arm-eabi-gcc -Wp,-MD,arch/arm/mach-msm/.drv_callback.o.d  -nostdinc -isystem /usr/bin/../lib/gcc/arm-eabi/4.5.0/include -Iinclude  -I/home/jacob/source/wildfire-kernel/arch/arm/include -include include/linux/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-msm/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Os -marm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -D__LINUX_ARM_ARCH__=6 -march=armv6 -mtune=arm1136j-s -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -Wdeclaration-after-statement -Wno-pointer-sign -fwrapv -fno-dwarf2-cfi-asm  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(drv_callback)"  -D"KBUILD_MODNAME=KBUILD_STR(drv_callback)"  -c -o arch/arm/mach-msm/drv_callback.o arch/arm/mach-msm/drv_callback.c
 
 deps_arch/arm/mach-msm/drv_callback.o := \
   arch/arm/mach-msm/drv_callback.c \
@@ -22,23 +22,23 @@ deps_arch/arm/mach-msm/drv_callback.o := \
     $(wildcard include/config/phys/addr/t/64bit.h) \
     $(wildcard include/config/64bit.h) \
   include/linux/posix_types.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/posix_types.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/types.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/posix_types.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/types.h \
   include/asm-generic/int-ll64.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/processor.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/processor.h \
     $(wildcard include/config/mmu.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/ptrace.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/ptrace.h \
     $(wildcard include/config/arm/thumb.h) \
     $(wildcard include/config/smp.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/hwcap.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/cache.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/hwcap.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/cache.h \
     $(wildcard include/config/arm/l1/cache/shift.h) \
     $(wildcard include/config/aeabi.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/system.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/system.h \
     $(wildcard include/config/cpu/xsc3.h) \
     $(wildcard include/config/cpu/sa1100.h) \
     $(wildcard include/config/cpu/sa110.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/memory.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/memory.h \
     $(wildcard include/config/page/offset.h) \
     $(wildcard include/config/dram/size.h) \
     $(wildcard include/config/dram/base.h) \
@@ -2652,13 +2652,13 @@ deps_arch/arm/mach-msm/drv_callback.o := \
     $(wildcard include/config/mach/qsd8x50a/st1/1.h) \
     $(wildcard include/config/mach/qsd8x50a/st1/5.h) \
     $(wildcard include/config/mach/bee.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/sizes.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/sizes.h \
   include/asm-generic/memory_model.h \
     $(wildcard include/config/flatmem.h) \
     $(wildcard include/config/sparsemem/vmemmap.h) \
     $(wildcard include/config/sparsemem.h) \
   include/linux/linkage.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/linkage.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/linkage.h \
   include/linux/irqflags.h \
     $(wildcard include/config/trace/irqflags.h) \
     $(wildcard include/config/irqsoff/tracer.h) \
@@ -2666,7 +2666,7 @@ deps_arch/arm/mach-msm/drv_callback.o := \
     $(wildcard include/config/trace/irqflags/support.h) \
     $(wildcard include/config/x86.h) \
   include/linux/typecheck.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/irqflags.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/irqflags.h \
   include/asm-generic/cmpxchg-local.h \
   include/asm-generic/cmpxchg.h \
   include/linux/rwsem.h \
@@ -2685,7 +2685,7 @@ deps_arch/arm/mach-msm/drv_callback.o := \
     $(wildcard include/config/generic/find/first/bit.h) \
     $(wildcard include/config/generic/find/last/bit.h) \
     $(wildcard include/config/generic/find/next/bit.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/bitops.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/bitops.h \
   include/asm-generic/bitops/non-atomic.h \
   include/asm-generic/bitops/fls64.h \
   include/asm-generic/bitops/sched.h \
@@ -2696,21 +2696,21 @@ deps_arch/arm/mach-msm/drv_callback.o := \
     $(wildcard include/config/arch/has/ilog2/u64.h) \
   include/linux/ratelimit.h \
   include/linux/param.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/param.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/param.h \
     $(wildcard include/config/hz.h) \
   include/linux/dynamic_printk.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/byteorder.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/byteorder.h \
   include/linux/byteorder/little_endian.h \
   include/linux/swab.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/swab.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/swab.h \
   include/linux/byteorder/generic.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/bug.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/bug.h \
     $(wildcard include/config/bug.h) \
     $(wildcard include/config/debug/bugverbose.h) \
   include/asm-generic/bug.h \
     $(wildcard include/config/generic/bug.h) \
     $(wildcard include/config/generic/bug/relative/pointers.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/atomic.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/atomic.h \
   include/asm-generic/atomic.h \
   include/linux/rwsem-spinlock.h \
   include/linux/spinlock.h \
@@ -2722,12 +2722,12 @@ deps_arch/arm/mach-msm/drv_callback.o := \
     $(wildcard include/config/preempt/notifiers.h) \
   include/linux/thread_info.h \
     $(wildcard include/config/compat.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/thread_info.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/thread_info.h \
     $(wildcard include/config/arm/thumbee.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/fpstate.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/fpstate.h \
     $(wildcard include/config/vfpv3.h) \
     $(wildcard include/config/iwmmxt.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/domain.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/domain.h \
     $(wildcard include/config/verify/permission/fault.h) \
     $(wildcard include/config/io/36.h) \
   include/linux/stringify.h \
@@ -2741,9 +2741,9 @@ deps_arch/arm/mach-msm/drv_callback.o := \
   include/linux/spinlock_up.h \
   include/linux/spinlock_api_up.h \
   include/linux/string.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/string.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/string.h \
   include/linux/errno.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/errno.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/errno.h \
   include/asm-generic/errno.h \
   include/asm-generic/errno-base.h \
   arch/arm/mach-msm/include/mach/drv_callback.h \

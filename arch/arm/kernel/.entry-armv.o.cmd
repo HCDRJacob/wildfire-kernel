@@ -1,4 +1,4 @@
-cmd_arch/arm/kernel/entry-armv.o := arm-eabi-gcc -Wp,-MD,arch/arm/kernel/.entry-armv.o.d  -nostdinc -isystem /usr/bin/../lib/gcc/arm-eabi/4.5.0/include -Iinclude  -I/home/jacob/source/buzz-2.6.29/arch/arm/include -include include/linux/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-msm/include -D__ASSEMBLY__ -mabi=aapcs-linux -mno-thumb-interwork -D__LINUX_ARM_ARCH__=6 -march=armv6 -mtune=arm1136j-s -msoft-float -gdwarf-2     -c -o arch/arm/kernel/entry-armv.o arch/arm/kernel/entry-armv.S
+cmd_arch/arm/kernel/entry-armv.o := arm-eabi-gcc -Wp,-MD,arch/arm/kernel/.entry-armv.o.d  -nostdinc -isystem /usr/bin/../lib/gcc/arm-eabi/4.5.0/include -Iinclude  -I/home/jacob/source/wildfire-kernel/arch/arm/include -include include/linux/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-msm/include -D__ASSEMBLY__ -mabi=aapcs-linux -mno-thumb-interwork -D__LINUX_ARM_ARCH__=6 -march=armv6 -mtune=arm1136j-s -msoft-float -gdwarf-2     -c -o arch/arm/kernel/entry-armv.o arch/arm/kernel/entry-armv.S
 
 deps_arch/arm/kernel/entry-armv.o := \
   arch/arm/kernel/entry-armv.S \
@@ -21,7 +21,7 @@ deps_arch/arm/kernel/entry-armv.o := \
     $(wildcard include/config/tls/reg/emul.h) \
     $(wildcard include/config/arch/msm7227.h) \
     $(wildcard include/config/arm/thumb.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/memory.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/memory.h \
     $(wildcard include/config/page/offset.h) \
     $(wildcard include/config/dram/size.h) \
     $(wildcard include/config/dram/base.h) \
@@ -43,12 +43,12 @@ deps_arch/arm/kernel/entry-armv.o := \
     $(wildcard include/config/arch/msm/arm11.h) \
     $(wildcard include/config/cache/l2x0.h) \
     $(wildcard include/config/arch/msm/scorpion.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/sizes.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/sizes.h \
   include/asm-generic/memory_model.h \
     $(wildcard include/config/flatmem.h) \
     $(wildcard include/config/sparsemem/vmemmap.h) \
     $(wildcard include/config/sparsemem.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/glue.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/glue.h \
     $(wildcard include/config/cpu/abrt/lv4t.h) \
     $(wildcard include/config/cpu/abrt/ev4.h) \
     $(wildcard include/config/cpu/abrt/ev4t.h) \
@@ -58,13 +58,13 @@ deps_arch/arm/kernel/entry-armv.o := \
     $(wildcard include/config/cpu/abrt/ev7.h) \
     $(wildcard include/config/cpu/pabrt/ifar.h) \
     $(wildcard include/config/cpu/pabrt/noifar.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/vfpmacros.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/vfpmacros.h \
     $(wildcard include/config/vfpv3.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/vfp.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/vfp.h \
   arch/arm/mach-msm/include/mach/entry-macro.S \
   arch/arm/mach-msm/include/mach/msm_iomap.h \
     $(wildcard include/config/msm/debug/uart.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/thread_notify.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/thread_notify.h \
   arch/arm/kernel/entry-header.S \
     $(wildcard include/config/frame/pointer.h) \
     $(wildcard include/config/alignment/trap.h) \
@@ -72,18 +72,18 @@ deps_arch/arm/kernel/entry-armv.o := \
     $(wildcard include/config/modules.h) \
     $(wildcard include/config/hotplug.h) \
   include/linux/linkage.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/linkage.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/assembler.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/linkage.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/assembler.h \
     $(wildcard include/config/cpu/feroceon.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/ptrace.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/hwcap.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/ptrace.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/hwcap.h \
   include/asm/asm-offsets.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/errno.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/errno.h \
   include/asm-generic/errno.h \
   include/asm-generic/errno-base.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/thread_info.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/thread_info.h \
     $(wildcard include/config/arm/thumbee.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/fpstate.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/fpstate.h \
 
 arch/arm/kernel/entry-armv.o: $(deps_arch/arm/kernel/entry-armv.o)
 

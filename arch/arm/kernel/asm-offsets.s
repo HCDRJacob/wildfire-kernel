@@ -13,7 +13,7 @@
 @	compiled by GNU C version 4.3.2, GMP version 4.3.2, MPFR version 2.4.2, MPC version 0.8.2
 @ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 @ options passed:  -nostdinc -Iinclude
-@ -I/home/jacob/source/buzz-2.6.29/arch/arm/include
+@ -I/home/jacob/source/wildfire-kernel/arch/arm/include
 @ -Iarch/arm/mach-msm/include -iprefix /usr/bin/../lib/gcc/arm-eabi/4.5.0/
 @ -D__USES_INITFINI__ -D__KERNEL__ -D__LINUX_ARM_ARCH__=6 -Uarm
 @ -DKBUILD_STR(s)=#s -DKBUILD_BASENAME=KBUILD_STR(asm_offsets)
@@ -436,16 +436,16 @@ main:
 	.sleb128 4
 	.4byte	0x0
 	.4byte	0x0
-	.file 2 "/home/jacob/source/buzz-2.6.29/arch/arm/include/asm/posix_types.h"
+	.file 2 "/home/jacob/source/wildfire-kernel/arch/arm/include/asm/posix_types.h"
 	.file 3 "include/asm-generic/int-ll64.h"
 	.file 4 "include/linux/types.h"
 	.file 5 "include/linux/capability.h"
 	.file 6 "include/linux/thread_info.h"
 	.file 7 "include/linux/time.h"
-	.file 8 "/home/jacob/source/buzz-2.6.29/arch/arm/include/asm/fpstate.h"
-	.file 9 "/home/jacob/source/buzz-2.6.29/arch/arm/include/asm/thread_info.h"
+	.file 8 "/home/jacob/source/wildfire-kernel/arch/arm/include/asm/fpstate.h"
+	.file 9 "/home/jacob/source/wildfire-kernel/arch/arm/include/asm/thread_info.h"
 	.file 10 "include/linux/sched.h"
-	.file 11 "/home/jacob/source/buzz-2.6.29/arch/arm/include/asm/processor.h"
+	.file 11 "/home/jacob/source/wildfire-kernel/arch/arm/include/asm/processor.h"
 	.file 12 "include/linux/list.h"
 	.file 13 "include/linux/spinlock_types_up.h"
 	.file 14 "include/linux/spinlock_types.h"
@@ -457,8 +457,8 @@ main:
 	.file 20 "include/linux/wait.h"
 	.file 21 "include/linux/completion.h"
 	.file 22 "include/linux/mm_types.h"
-	.file 23 "/home/jacob/source/buzz-2.6.29/arch/arm/include/asm/page.h"
-	.file 24 "/home/jacob/source/buzz-2.6.29/arch/arm/include/asm/mmu.h"
+	.file 23 "/home/jacob/source/wildfire-kernel/arch/arm/include/asm/page.h"
+	.file 24 "/home/jacob/source/wildfire-kernel/arch/arm/include/asm/mmu.h"
 	.file 25 "include/linux/mm.h"
 	.file 26 "include/asm-generic/cputime.h"
 	.file 27 "include/linux/mmzone.h"
@@ -466,7 +466,7 @@ main:
 	.file 29 "include/linux/slab_def.h"
 	.file 30 "include/linux/rcupdate.h"
 	.file 31 "include/linux/rcuclassic.h"
-	.file 32 "/home/jacob/source/buzz-2.6.29/arch/arm/include/asm/signal.h"
+	.file 32 "/home/jacob/source/wildfire-kernel/arch/arm/include/asm/signal.h"
 	.file 33 "include/asm-generic/signal.h"
 	.file 34 "include/asm-generic/siginfo.h"
 	.file 35 "include/linux/signal.h"
@@ -481,7 +481,7 @@ main:
 	.file 44 "include/linux/hrtimer.h"
 	.file 45 "include/linux/cred.h"
 	.file 46 "include/linux/vmstat.h"
-	.file 47 "/home/jacob/source/buzz-2.6.29/arch/arm/include/asm/hwcap.h"
+	.file 47 "/home/jacob/source/wildfire-kernel/arch/arm/include/asm/hwcap.h"
 	.file 48 "include/linux/kernel.h"
 	.file 49 "include/linux/timex.h"
 	.file 50 "include/linux/timer.h"
@@ -9109,6 +9109,8 @@ main:
 	.ascii	"nblocks\000"
 .LASF262:
 	.ascii	"list\000"
+.LASF677:
+	.ascii	"/home/jacob/source/wildfire-kernel\000"
 .LASF457:
 	.ascii	"sigpending\000"
 .LASF279:
@@ -9327,8 +9329,6 @@ main:
 	.ascii	"cred_exec_mutex\000"
 .LASF58:
 	.ascii	"fpexc\000"
-.LASF677:
-	.ascii	"/home/jacob/source/buzz-2.6.29\000"
 .LASF148:
 	.ascii	"last_switch_count\000"
 .LASF504:

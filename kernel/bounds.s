@@ -13,7 +13,7 @@
 @	compiled by GNU C version 4.3.2, GMP version 4.3.2, MPFR version 2.4.2, MPC version 0.8.2
 @ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 @ options passed:  -nostdinc -Iinclude
-@ -I/home/jacob/source/buzz-2.6.29/arch/arm/include
+@ -I/home/jacob/source/wildfire-kernel/arch/arm/include
 @ -Iarch/arm/mach-msm/include -iprefix /usr/bin/../lib/gcc/arm-eabi/4.5.0/
 @ -D__USES_INITFINI__ -D__KERNEL__ -D__LINUX_ARM_ARCH__=6 -Uarm
 @ -DKBUILD_STR(s)=#s -DKBUILD_BASENAME=KBUILD_STR(bounds)
@@ -477,7 +477,7 @@ foo:
 	.4byte	0x0
 	.section	.debug_str,"MS",%progbits,1
 .LASF48:
-	.ascii	"/home/jacob/source/buzz-2.6.29\000"
+	.ascii	"/home/jacob/source/wildfire-kernel\000"
 .LASF27:
 	.ascii	"PG_mappedtodisk\000"
 .LASF22:

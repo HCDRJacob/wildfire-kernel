@@ -1,4 +1,4 @@
-cmd_arch/arm/mm/tlb-v6.o := arm-eabi-gcc -Wp,-MD,arch/arm/mm/.tlb-v6.o.d  -nostdinc -isystem /usr/bin/../lib/gcc/arm-eabi/4.5.0/include -Iinclude  -I/home/jacob/source/buzz-2.6.29/arch/arm/include -include include/linux/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-msm/include -D__ASSEMBLY__ -mabi=aapcs-linux -mno-thumb-interwork -D__LINUX_ARM_ARCH__=6 -march=armv6 -mtune=arm1136j-s -msoft-float -gdwarf-2     -c -o arch/arm/mm/tlb-v6.o arch/arm/mm/tlb-v6.S
+cmd_arch/arm/mm/tlb-v6.o := arm-eabi-gcc -Wp,-MD,arch/arm/mm/.tlb-v6.o.d  -nostdinc -isystem /usr/bin/../lib/gcc/arm-eabi/4.5.0/include -Iinclude  -I/home/jacob/source/wildfire-kernel/arch/arm/include -include include/linux/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-msm/include -D__ASSEMBLY__ -mabi=aapcs-linux -mno-thumb-interwork -D__LINUX_ARM_ARCH__=6 -march=armv6 -mtune=arm1136j-s -msoft-float -gdwarf-2     -c -o arch/arm/mm/tlb-v6.o arch/arm/mm/tlb-v6.S
 
 deps_arch/arm/mm/tlb-v6.o := \
   arch/arm/mm/tlb-v6.S \
@@ -8,9 +8,9 @@ deps_arch/arm/mm/tlb-v6.o := \
     $(wildcard include/config/profile/all/branches.h) \
     $(wildcard include/config/enable/must/check.h) \
     $(wildcard include/config/enable/warn/deprecated.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/linkage.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/linkage.h \
   include/asm/asm-offsets.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/page.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/page.h \
     $(wildcard include/config/mmu.h) \
     $(wildcard include/config/cpu/copy/v3.h) \
     $(wildcard include/config/cpu/copy/v4wt.h) \
@@ -22,7 +22,7 @@ deps_arch/arm/mm/tlb-v6.o := \
     $(wildcard include/config/cpu/copy/v6.h) \
     $(wildcard include/config/sparsemem.h) \
   include/asm-generic/page.h \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/tlbflush.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/tlbflush.h \
     $(wildcard include/config/cpu/tlb/v3.h) \
     $(wildcard include/config/cpu/tlb/v4wt.h) \
     $(wildcard include/config/cpu/tlb/v4wbi.h) \
@@ -31,7 +31,7 @@ deps_arch/arm/mm/tlb-v6.o := \
     $(wildcard include/config/cpu/tlb/v6.h) \
     $(wildcard include/config/cpu/tlb/v7.h) \
     $(wildcard include/config/smp.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/glue.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/glue.h \
     $(wildcard include/config/cpu/arm610.h) \
     $(wildcard include/config/cpu/arm710.h) \
     $(wildcard include/config/cpu/abrt/lv4t.h) \
@@ -45,9 +45,9 @@ deps_arch/arm/mm/tlb-v6.o := \
     $(wildcard include/config/cpu/pabrt/noifar.h) \
   arch/arm/mm/proc-macros.S \
     $(wildcard include/config/cpu/dcache/writethrough.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/thread_info.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/thread_info.h \
     $(wildcard include/config/arm/thumbee.h) \
-  /home/jacob/source/buzz-2.6.29/arch/arm/include/asm/fpstate.h \
+  /home/jacob/source/wildfire-kernel/arch/arm/include/asm/fpstate.h \
     $(wildcard include/config/vfpv3.h) \
     $(wildcard include/config/iwmmxt.h) \
 
