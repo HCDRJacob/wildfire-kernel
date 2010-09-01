@@ -1,0 +1,29 @@
+--- kernel/ptrace.c
++++ kernel/ptrace.c
+@@ -230,15 +230,23 @@
+ bad:
+ 	write_unlock_irqrestore(&tasklist_lock, flags);
+ 	task_unlock(task);
+-	mutex_unlock(&task->cred_exec_mutex);
++	mutex_unlock(&current->cred_exec_mutex);
+ out:
+ 	return retval;
+ }
+ 
++static inline void __ptrace_detach(struct task_struct *child, unsigned int data)
++{
++	child->exit_code = data;
++	/* .. re-parent .. */
++	__ptrace_unlink(child);
++	/* .. and wake it up. */
++	if (child->exit_state != EXIT_ZOMBIE)
++		wake_up_process(child);
++}
++
+ int ptrace_detach(struct task_struct *child, unsigned int data)
+ {
+-	int dead = 0;
+-
+ 	if (!valid_signal(data))
+ 		return -EIO;
+ 
