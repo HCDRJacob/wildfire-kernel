@@ -17,11 +17,10 @@
  *
  */
 
- #include <linux/cpufreq.h>
- #include <linux/earlysuspend.h>
- #include <linux/init.h>
- #include <linux/cpufreq.h>
- #include "acpuclock.h"
+#include <linux/cpufreq.h>
+#include <linux/earlysuspend.h>
+#include <linux/init.h>
+#include "acpuclock.h"
 
 #ifdef CONFIG_MSM_CPU_FREQ_SCREEN
 static void msm_early_suspend(struct early_suspend *handler) {
@@ -87,27 +86,19 @@ static int msm_cpufreq_verify(struct cpufreq_policy *policy)
 	return 0;
 }
 
-static struct freq_attr* msm_attr[] = {
-        &cpufreq_freq_attr_scaling_available_freqs,
-        NULL,
-};
-
-
- static int __init msm_cpufreq_init(struct cpufreq_policy *policy)
- {
- 	struct cpufreq_frequency_table *table =
+static int __init msm_cpufreq_init(struct cpufreq_policy *policy)
+{
+	struct cpufreq_frequency_table *table =
 		cpufreq_frequency_get_table(smp_processor_id());
 
 	BUG_ON(cpufreq_frequency_table_cpuinfo(policy, table));
- 	policy->cur = acpuclk_get_rate();
- 	/* restrict cpu freq scaling range by overwriting */
- #ifdef CONFIG_MSM_CPU_FREQ_ONDEMAND_MIN
- 	policy->min = CONFIG_MSM_CPU_FREQ_ONDEMAND_MIN;
- #endif
- #ifdef CONFIG_MSM_CPU_FREQ_ONDEMAND_MAX
- 	policy->max = CONFIG_MSM_CPU_FREQ_ONDEMAND_MAX;
- #endif
- 	policy->cpuinfo.transition_latency =
+	policy->cur = acpuclk_get_rate();
+#if 0
+	/* restrict cpu freq scaling range by overwriting */
+	policy->min = CONFIG_MSM_CPU_FREQ_ONDEMAND_MIN;
+	policy->max = CONFIG_MSM_CPU_FREQ_ONDEMAND_MAX;
+#endif
+	policy->cpuinfo.transition_latency =
 		acpuclk_get_switch_time() * NSEC_PER_USEC;
 	return 0;
 }
@@ -117,11 +108,9 @@ static struct cpufreq_driver msm_cpufreq_driver = {
 	.flags		= CPUFREQ_STICKY | CPUFREQ_CONST_LOOPS,
 	.init		= msm_cpufreq_init,
 	.verify		= msm_cpufreq_verify,
- 	.target		= msm_cpufreq_target,
- 	.name		= "msm",
-	.owner		= THIS_MODULE,
-	.attr		= msm_attr,
- };
+	.target		= msm_cpufreq_target,
+	.name		= "msm",
+};
 
 static int __init msm_cpufreq_register(void)
 {
@@ -130,3 +119,4 @@ static int __init msm_cpufreq_register(void)
 
 device_initcall(msm_cpufreq_register);
 #endif
+
